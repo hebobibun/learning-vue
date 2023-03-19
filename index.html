@@ -14,43 +14,16 @@
   </head>
   <body>
     <header>
-      <h1>Vue Events</h1>
+      <h1>Reactivity in Action</h1>
     </header>
-    <section id="events">
-      <h2>Events in Action</h2>
-      <button @click="add(10)">Add 10</button>
-      <button @click="reduce(5)">Reduce 5</button>
-      <button @click="resetCounter" style="background-color:chocolate;">Reset Counter</button>
-      <p v-once>Starting counter : {{ counter }}</p>
-      <p>Result: {{ counter }}</p>
-
-      <!-- <input 
-        type="text" 
-        placeholder="input your first name" 
-        v-model="name" 
-        @keyup.enter="confirm"> -->
-      <input 
-        type="text" 
-        placeholder="input your first name" 
-        v-model="name">
-      <input 
-        type="text" 
-        placeholder="input your last name" 
-        v-model="lastName">
-      <button @click="resetInput" style="background-color:chocolate;">Reset Input</button>
-      <p>Your name : {{ fullname }}</p>
-
-      <input 
-        type="number" 
-        placeholder="input your age" 
-        @input="setAge($event, 'Year Old')">
-      <p>Your age : {{ age }}</p>
-
-      <form @submit.prevent="submitForm">
-        <input type="text">
-        <button>Sign Up</button>
-
-      </form>
+    <section id="assignment">
+      <button @click="addNumber(5)">Add 5</button>
+      <button @click="addNumber(1)">Add 1</button>
+      <!-- 1) Connect the buttons and calculate a value (a number) -->
+      <!-- Show "Not there yet" until you reach a result of exactly 37 -->
+      <!-- Show "Too much!" if the result is greater than 37 -->
+      <p>Result: {{ result }}</p>
+      <!-- 2) Watch for changes in "result" and reset the value to 0 after 5 seconds -->
     </section>
   </body>
 </html>
