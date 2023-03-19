@@ -3,17 +3,44 @@ const app = Vue.createApp({
     return {
       counter: 10,
       name: '',
-      confirmedName: '',
+      lastName: '',
+      // fullname: '',
+      // confirmedName: '',
       age: ''
     };
   },
 
+  watch: {
+    counter(value) {
+      if (this.counter > 50) {
+        const that = this
+        setTimeout(function(){
+          that.counter = 0;
+        }, 500)
+      }
+    }
+    // name(value) {
+    //   if (value === '') {
+    //     this.fullname = '';
+    //   } else {
+    //     this.fullname = value + ' ' + this.lastName
+    //   }
+    // },
+    // lastName(value) {
+    //   if (value === '') {
+    //     this.fullname = '';
+    //   } else {
+    //     this.fullname = this.name + ' ' + value
+    //   }
+    // }
+  },
+
   computed: {
     fullname() {
-      if (this.confirmedName === '') {
+      if (this.name === '' || this.lastName === '') {
         return '';
       } else {
-        return 'Muhammad' + ' ' + this.confirmedName;
+        return this.name + ' ' + this.lastName;
       }
     },
   },
@@ -22,13 +49,15 @@ const app = Vue.createApp({
     submitForm(e) {
       alert('Successfully submitted!');
     },
-    confirm() {
-      console.log('confirm...')
-      this.confirmedName = this.name;
-    },
+    // confirm() {
+    //   console.log('confirm...')
+    //   this.confirmedName = this.name;
+    // },
     resetInput() {
       this.name = '';
-      this.confirmedName = '';
+      this.lastName = '';
+      this.fullname = '';
+      // this.confirmedName = '';
       console.log('resetInput...')
     },
     resetCounter() {
