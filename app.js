@@ -1,21 +1,19 @@
 const app = Vue.createApp({
-    data() {
-        return {
-            goalA: 'Finish the course and learn Vue!',
-            goalB: 'Master and build amazing Vue Apps!',
-            vueLink: 'https://vuejs.org'
-        };
+  data() {
+    return {
+      name: 'Maximilian',
+      age: 31,
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Man_Daeng_Waterfall.jpg/640px-Man_Daeng_Waterfall.jpg'
+    };
+  },
+  methods: {
+    calculateAge() {
+      return this.age + 5;
     },
-    methods: {
-        outputGoal() {
-            const randomNum = Math.random();
-            if (randomNum < 0.5) {
-                return this.goalA;
-            } else {
-                return this.goalB;
-            }
-        }
+    calculateRandom() {
+      return Math.random();
     }
+  }
 });
 
-app.mount('#user-goal');
+app.mount('#assignment');
