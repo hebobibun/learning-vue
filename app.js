@@ -7,13 +7,8 @@ const app = Vue.createApp({
       age: ''
     };
   },
-  methods: {
-    submitForm(e) {
-      alert('Successfully submitted!');
-    },
-    confirm() {
-      this.confirmedName = this.name;
-    },
+
+  computed: {
     fullname() {
       if (this.confirmedName === '') {
         return '';
@@ -21,15 +16,27 @@ const app = Vue.createApp({
         return 'Muhammad' + ' ' + this.confirmedName;
       }
     },
+  },
+  
+  methods: {
+    submitForm(e) {
+      alert('Successfully submitted!');
+    },
+    confirm() {
+      console.log('confirm...')
+      this.confirmedName = this.name;
+    },
     resetInput() {
       this.name = '';
       this.confirmedName = '';
+      console.log('resetInput...')
     },
     resetCounter() {
       this.counter = 10;
+      console.log('resetCounter...')
     },
     add(num) {
-        this.counter = this.counter + num;
+      this.counter = this.counter + num;
     },
     reduce(num) {
       if (this.counter >= num) {
