@@ -18,8 +18,8 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="add(10)">Add 10</button>
-      <button v-on:click="reduce(5)">Reduce 5</button>
+      <button @click="add(10)">Add 10</button>
+      <button @click="reduce(5)">Reduce 5</button>
       <button @click="resetCounter" style="background-color:chocolate;">Reset Counter</button>
       <p v-once>Starting counter : {{ counter }}</p>
       <p>Result: {{ counter }}</p>
@@ -43,7 +43,7 @@
       <input 
         type="number" 
         placeholder="input your age" 
-        v-on:input="setAge($event, 'Year Old')">
+        @input="setAge($event, 'Year Old')">
       <p>Your age : {{ age }}</p>
 
       <form @submit.prevent="submitForm">
