@@ -30,7 +30,7 @@
         v-model="name" 
         @keyup.enter="confirm">
       <button @click="resetInput" style="background-color:chocolate;">Reset Input</button>
-      <p>Your name : {{ confirmedName }}</p>
+      <p>Your name : {{ fullname() }}</p>
 
       <input 
         type="number" 
