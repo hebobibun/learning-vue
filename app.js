@@ -1,19 +1,32 @@
 const app = Vue.createApp({
   data() {
     return {
-      name: 'Maximilian',
-      age: 31,
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Man_Daeng_Waterfall.jpg/640px-Man_Daeng_Waterfall.jpg'
+      counter: 10,
+      name: '',
+      confirmedName: '',
+      age: ''
     };
   },
   methods: {
-    calculateAge() {
-      return this.age + 5;
+    submitForm(e) {
+      alert('Successfully submitted!');
     },
-    calculateRandom() {
-      return Math.random();
-    }
+    confirm() {
+      this.confirmedName = this.name;
+    },
+    add(num) {
+        this.counter = this.counter + num;
+    },
+    reduce(num) {
+      if (this.counter >= num) {
+        this.counter = this.counter - num;
+      }
+    },
+    setAge(e, tahun) {
+      this.age = e.target.value + ' ' + tahun;
+      console.log(e)
+    },
   }
 });
 
-app.mount('#assignment');
+app.mount('#events');
