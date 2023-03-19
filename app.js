@@ -14,6 +14,13 @@ const app = Vue.createApp({
     confirm() {
       this.confirmedName = this.name;
     },
+    resetInput() {
+      this.name = '';
+      this.confirmedName = '';
+    },
+    resetCounter() {
+      this.counter = 10;
+    },
     add(num) {
         this.counter = this.counter + num;
     },
